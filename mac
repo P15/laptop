@@ -151,6 +151,7 @@ brew_install_or_upgrade 'ruby-build'
 brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'sbt'
 brew_install_or_upgrade 'mysql'
+brew_install_or_upgrade 'wget'
 
 brew tap caskroom/cask
 brew_install_or_upgrade 'caskroom/cask/brew-cask'
