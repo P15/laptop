@@ -175,4 +175,6 @@ if ! docker-machine ls | grep -Fq "default"; then
   fancy_echo "Creating a local virtual machine for docker. Its name is 'default'. Its disk size is 80GB."
   # We need around 80 GB for docker's virtual machine because our dev databases are so big
   docker-machine create --driver virtualbox --virtualbox-disk-size "80000" default
+else
+  fancy_echo "A docker-machine named 'default' already exists. Skipping ..."
 fi
