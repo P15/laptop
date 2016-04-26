@@ -7,22 +7,19 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
-Requirements
-------------
-
-We support:
-
-* [OS X Mavericks (10.9)](https://itunes.apple.com/us/app/os-x-mavericks/id675248567)
-* [OS X Yosemite (10.10)](https://www.apple.com/osx/)
-
 Install
 -------
 
 Download, review, then execute the script:
 
 ```sh
+# Download this script:
 $ curl --remote-name https://raw.githubusercontent.com/recombine/laptop/master/mac
-$ less mac
+
+# Read through the script; ensure you have a general idea of what it will do:
+$ less ./mac
+
+# Execute the script
 $ ./mac
 ```
 
