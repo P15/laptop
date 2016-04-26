@@ -26,6 +26,7 @@ $ less mac
 $ ./mac
 ```
 
+
 License
 -------
 
@@ -34,6 +35,11 @@ It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: LICENSE
+
+By participating in this project,
+you agree to abide by the thoughtbot [code of conduct].
+
+[code of conduct]: https://thoughtbot.com/open-source-code-of-conduct
 
 About thoughtbot
 ----------------
