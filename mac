@@ -131,7 +131,7 @@ brew_install_or_upgrade 'phantomjs'
 brew_install_or_upgrade 'sbt'
 brew_install_or_upgrade 'mysql'
 brew_install_or_upgrade 'jq' # command line JSON parser
-brew_install_or_upgrade 'python'
+brew_install_or_upgrade 'python' # for pip so that we can install awscli
 brew_install_or_upgrade 'awscli'
 brew_install_or_upgrade 'parallel'
 brew_install_or_upgrade 'gpg2'
