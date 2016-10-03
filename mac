@@ -108,6 +108,7 @@ tap 'caskroom/cask'
 tap 'homebrew/services'
 
 brew 'git'
+brew 'git-lfs'
 brew 'openssl'
 brew 'libyaml'                              # should come after openssl
 cask 'java'
