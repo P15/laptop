@@ -143,6 +143,7 @@ EOF
 
 pip_install_or_upgrade 'pip'
 pip_install_or_upgrade 'awscli'
+pip_install_or_upgrade 'ebcli'
 
 node_version="0.10"
 
