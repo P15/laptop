@@ -130,6 +130,7 @@ brew 'parallel'
 brew 'gpg2'
 brew 'nvm'
 brew 'heroku-toolbelt'
+brew 'awsebcli'
 
 # Useful apps
 cask 'google-chrome'
