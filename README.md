@@ -19,6 +19,9 @@ $ curl --remote-name https://raw.githubusercontent.com/recombine/laptop/master/m
 # Read through the script; ensure you have a general idea of what it will do:
 $ less ./mac
 
+# If your docker-machine is already set up and running, stop it first:
+$ docker-machine stop default
+
 # Execute the script
 $ ./mac
 ```

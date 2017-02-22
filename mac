@@ -142,6 +142,8 @@ cask 'gpgtools'
 
 EOF
 
+git lfs install
+
 pip_install_or_upgrade 'pip'
 pip_install_or_upgrade 'awscli'
 pip_install_or_upgrade 'ebcli'
