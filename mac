@@ -111,6 +111,7 @@ brew 'git'
 brew 'git-lfs'
 brew 'openssl'
 brew 'libyaml'                              # should come after openssl
+printf "Enter password for Java install."
 cask 'java'
 brew 'zsh'
 brew 'postgres', restart_service: :changed
@@ -138,6 +139,7 @@ cask 'slack'
 cask 'docker-toolbox'
 cask 'disk-inventory-x'
 cask 'atom'
+printf "Enter password for GPGTools install."
 cask 'gpgtools'
 
 EOF
