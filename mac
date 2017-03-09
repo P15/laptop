@@ -111,6 +111,7 @@ brew 'git'
 brew 'git-lfs'
 brew 'openssl'
 brew 'libyaml'                              # should come after openssl
+printf "Enter password for Java install."
 cask 'java'
 brew 'zsh'
 brew 'postgres', restart_service: :changed
