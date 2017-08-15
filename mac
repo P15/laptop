@@ -71,11 +71,11 @@ gem_install_or_update() {
 }
 
 pip_install_or_upgrade() {
-  if pip list | grep "$1" > /dev/null; then
+  if pip2 list | grep "$1" > /dev/null; then
     fancy_echo "Upgrading pip package $1"
-    pip install --upgrade "$1" > /dev/null
+    pip2 install --upgrade "$1" > /dev/null
   else
-    pip install "$1"
+    pip2 install "$1"
   fi
 }
 
