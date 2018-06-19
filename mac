@@ -125,6 +125,7 @@ brew 'phantomjs'
 brew 'sbt'
 brew 'mysql', restart_service: :changed
 brew 'jq'
+brew 'python2'
 brew 'python'                               # for pip to install awscli
 brew 'parallel'
 brew 'gpg2'
