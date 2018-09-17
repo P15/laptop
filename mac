@@ -12,21 +12,21 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-append_to_zshrc() {
-  local text="$1" zshrc
+append_to_bash_profile() {
+  local text="$1" bash_profile
   local skip_new_line="${2:-0}"
 
-  if [ -w "$HOME/.zshrc.local" ]; then
-    zshrc="$HOME/.zshrc.local"
+  if [ -w "$HOME/.bash_profile" ]; then
+    bash_profile="$HOME/.bash_profile"
   else
-    zshrc="$HOME/.zshrc"
+    bash_profile="$HOME/.bash_profile"
   fi
 
-  if ! grep -Fqs "$text" "$zshrc"; then
+  if ! grep -Fqs "$text" "$bash_profile"; then
     if [ "$skip_new_line" -eq 1 ]; then
-      printf "%s\n" "$text" >> "$zshrc"
+      printf "%s\n" "$text" >> "$bash_profile"
     else
-      printf "\n%s\n" "$text" >> "$zshrc"
+      printf "\n%s\n" "$text" >> "$bash_profile"
     fi
   fi
 }
@@ -37,27 +37,12 @@ if [ ! -d "$HOME/.bin/" ]; then
   mkdir "$HOME/.bin"
 fi
 
-if [ ! -f "$HOME/.zshrc" ]; then
-  touch "$HOME/.zshrc"
+if [ ! -f "$HOME/.bash_profile" ]; then
+  touch "$HOME/.bash_profile"
 fi
 
 # shellcheck disable=SC2016
-append_to_zshrc 'export PATH="$HOME/.bin:$PATH"'
-
-case "$SHELL" in
-  */zsh) : ;;
-  *)
-    fancy_echo "Changing your shell to zsh ..."
-      shell_path="$(which zsh)"
-      # In case the shell is not added to the list of shells
-      if ! grep "$shell_path" /etc/shells > /dev/null 2>&1 ; then
-        fancy_echo "Adding '$shell_path' to /etc/shells"
-        sudo sh -c "echo $shell_path >> /etc/shells"
-      fi
-      chsh -s "$shell_path"
-
-    ;;
-esac
+append_to_bash_profile 'export PATH="$HOME/.bin:$PATH"'
 
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
@@ -84,10 +69,10 @@ if ! command -v brew >/dev/null; then
     curl -fsS \
       'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
 
-    append_to_zshrc '# recommended by brew doctor'
+    append_to_bash_profile '# recommended by brew doctor'
 
     # shellcheck disable=SC2016
-    append_to_zshrc 'export PATH="/usr/local/bin:$PATH"' 1
+    append_to_bash_profile 'export PATH="/usr/local/bin:$PATH"' 1
 
     export PATH="/usr/local/bin:$PATH"
 else
@@ -112,7 +97,6 @@ brew 'git-lfs'
 brew 'openssl'
 brew 'libyaml'                              # should come after openssl
 cask 'java'
-brew 'zsh'
 brew 'postgres', restart_service: :changed
 brew 'the_silver_searcher'
 brew 'reattach-to-user-namespace'
@@ -121,7 +105,6 @@ brew 'node'
 brew 'readline'
 brew 'rbenv'
 brew 'ruby-build'
-brew 'phantomjs'
 brew 'sbt'
 brew 'mysql', restart_service: :changed
 brew 'jq'
@@ -148,12 +131,12 @@ pip_install_or_upgrade 'pip'
 pip_install_or_upgrade 'awscli'
 pip_install_or_upgrade 'ebcli'
 
-node_version="0.10"
+node_version="10"
 
 # shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - --no-rehash zsh)"' 1
+append_to_bash_profile 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-ruby_version="2.1.3"
+ruby_version="2.4.4"
 RBENV_VERSION="$ruby_version"
 
 eval "$(rbenv init - zsh)"
