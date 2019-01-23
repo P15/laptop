@@ -113,8 +113,7 @@ brew 'python'                               # for pip to install awscli
 brew 'parallel'
 brew 'gpg2'
 brew 'nvm'
-brew 'heroku-toolbelt'
-brew 'awsebcli'
+brew 'heroku/brew/heroku'
 
 # Useful apps
 cask 'google-chrome'
@@ -129,7 +128,7 @@ git lfs install
 
 pip_install_or_upgrade 'pip'
 pip_install_or_upgrade 'awscli'
-pip_install_or_upgrade 'ebcli'
+pip_install_or_upgrade 'awsebcli'
 
 node_version="10"
 
