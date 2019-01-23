@@ -91,6 +91,7 @@ brew tap Homebrew/bundle
 brew bundle --file=- <<EOF
 tap 'caskroom/cask'
 tap 'homebrew/services'
+tap 'heroku/brew'
 
 brew 'git'
 brew 'git-lfs'
