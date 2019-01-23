@@ -136,10 +136,10 @@ node_version="10"
 # shellcheck disable=SC2016
 append_to_bash_profile 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
-ruby_version="2.4.4"
+ruby_version="2.4.5"
 RBENV_VERSION="$ruby_version"
 
-eval "$(rbenv init - zsh)"
+# eval "$(rbenv init - zsh)"
 
 if ! rbenv versions | grep -Fq "$ruby_version"; then
   RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
