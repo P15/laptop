@@ -121,7 +121,7 @@ cask 'google-chrome'
 cask 'slack'
 cask 'disk-inventory-x'
 cask 'atom'
-cask 'gpgtools'
+cask 'gpg-suite'
 
 EOF
 
