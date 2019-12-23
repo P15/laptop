@@ -89,7 +89,7 @@ brew update
 brew tap Homebrew/bundle
 
 brew bundle --file=- <<EOF
-tap 'caskroom/cask'
+tap 'caskroom/cask-cask'
 tap 'homebrew/services'
 tap 'heroku/brew'
 
