@@ -1,3 +1,4 @@
+cd ~/recombine
 git clone git@github.com:p15/phosphorus-api-ruby-client.git
 git clone git@github.com:p15/phosphorus-atomic.git
 git clone git@github.com:p15/phosphorus-engine.git
